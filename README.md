@@ -155,8 +155,6 @@ The algorithm is explained in one of my other projects (link - https://github.co
 
 Some outputs from Beam Search -
 
-Some outputs from Beam Search -
-
 - evaluate_with_beam('it is very cold here', 5) :-
 
   - Translated Sentence 1 : ce tres froid; Associated Neg Log Probability: [4.7579575] 
