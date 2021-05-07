@@ -131,13 +131,68 @@ Greedy Search is the most basic inference algorithm. It takes the word with the 
 
 Some outputs from Greedy Search -
 
-<ins>OUTPUT-1</ins>
+<ins>OUTPUT-1</ins> <br>
 Input:         : this is coming good <br>
 Prediction     : ca vient bien <br>
 Ground truth   : ça vient bien <br>
 
+<ins>OUTPUT-2</ins> <br>
+Input:         : You may speak <br>
+Prediction     : vous pouvez parler <br>
+Ground truth   : Vous pouvez parler <br>
+
+<ins>OUTPUT-3</ins> <br>
+Input:         : it is very cold here <br>
+Prediction     : il fait tres froid ici <br>
+Ground truth   : il fait vraiment froid ici <br>
 
 
+**2. Beam Search**
+
+Beam Search is slightly complicated. It produces K (which is user-defined) number of translations based on highest conditional probabilities of the words
+
+The algorithm is explained in one of my other projects (link - https://github.com/garganm1/Neural-Machine-Translation-with-Bahdanau-Attention). Please see to understand how the algorithm works.
+
+Some outputs from Beam Search -
+
+Some outputs from Beam Search -
+
+- evaluate_with_beam('it is very cold here', 5) :-
+
+  - Translated Sentence 1 : ce tres froid; Associated Neg Log Probability: [4.7579575] 
+
+  - Translated Sentence 2 : il tres froid ici; Associated Neg Log Probability: [0.33498693] 
+
+  - Translated Sentence 3 : c tres rhume la; Associated Neg Log Probability: [4.0017323] 
+
+  - Translated Sentence 4 : on tres froid ici; Associated Neg Log Probability: [4.830948] 
+
+  - Translated Sentence 5 : ca a froid ici; Associated Neg Log Probability: [3.0651] 
+
+- evaluate_with_beam('You may speak', 5)
+
+  - Translated Sentence 1 : vous parler; Associated Neg Log Probability: [1.0982362] 
+
+  - Translated Sentence 2 : il parler; Associated Neg Log Probability: [1.2011795] 
+
+  - Translated Sentence 3 : tu vous parler; Associated Neg Log Probability: [2.6814516] 
+
+  - Translated Sentence 4 : ca peut parler; Associated Neg Log Probability: [3.2999525] 
+
+  - Translated Sentence 5 : on vous peut parler; Associated Neg Log Probability: [4.1590004] 
 
 
+- evaluate_with_beam('this is very good', 5)
 
+  - Translated Sentence 1 : c tres bon; Associated Neg Log Probability: [0.6709021] 
+
+  - Translated Sentence 2 : il fort bien; Associated Neg Log Probability: [2.0666888] 
+
+  - Translated Sentence 3 : ca vraiment beau; Associated Neg Log Probability: [2.3271205] 
+
+  - Translated Sentence 4 : ce agit bonne; Associated Neg Log Probability: [4.0318303] 
+
+  - Translated Sentence 5 : voila tres bien; Associated Neg Log Probability: [2.9427016] 
+
+
+This concludes the implementation of Transformer architecture on the application of language translation. Transformers are a revolutionary 'technology' especially in the field of NLP. Recently, some progress has been made on its application in Computer Vision problems as well such as - https://arxiv.org/pdf/2010.11929.pdf. Nevertheless, they have been a great step in improving and elongating the research depth in Deep Learning.
